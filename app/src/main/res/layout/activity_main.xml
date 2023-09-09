@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:maxLength="6"
+        android:id="@+id/edtPeso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Digite seu peso"/>
+
+    <EditText
+        android:maxLength="6"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/edtPeso"
+        android:id="@+id/edtAltura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Digite sua altura"/>
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:text="Click"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+
+
+<!--Margem adicionada por fora, ela que cria esse retangulo
+menor que a tela no android-->
+
+<!--Roque usou textSize=38sp, mas na view xml fica minusculo no meu.
+No celular fica normal. Para ter resultado igual o dele no xml, coloquei
+380sp, mas ai uma única letra ocupou toda a tela do emulador
+
+File > invalidate cache and restart > vai baixar os gradles de novo automaticamente
+> dá zoom na tela pelo + no xml, não estica pelo mouse-->
+
+
+<!-- TRECHO SÓ PRA CONSTRAINT LAYOUT-->
+
+<!--layout_constraintTop_toTopOf="parent" vai do top até
+o parent (no caso, o constraint) - Se eu remover essa linha
+o "Hello Lucas" vai pra parte de baixo da tela, ainda alinhada
+no centro. Isso se deve a linha superior a que está nesse
+comentário, pois temos uma Start_toStartOf-->
+
+<!-- Se removermos a Top_toTopOf e a EndOf, o textview vai
+para esquerda inferior. Se em vez de EndOf removermos a Start,
+text view vai para direita inferior - BASICAMENTE, START
+É ESQUERDA E END É DIREITA - TOP É CIMA E BOTTOM É BAIXO
+QUANDO USAMOS AS DUAS COISAS OPOSTAS, NÓS ALINHAMOS NO CENTRO-->
+
+
+<!-- TRECHO DO RELATIVE LAYOUT-->
+
+<!-- Ele facilita um pouco o posicionamento-->
+<!-- no lugar de <androidx.constraintlayout.widget.ConstraintLayout
+escremos apenas <RelativeLayout-->
+<!--Depois dessa troca é necessário remover as propriedades
+de constraints-->
+
+<!-- BACKUP DAS PROPRIEDADES CONSTRAINTS, abaixo do textSize
+app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+        -->
+
+<!-- Para centralizar agora basta escrever center e selecionar
+horizontal e outra linha pro vertical
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"-->
+
+<!-- Agora vamos adicionar um botão, para isso adicionamos
+outro componente <>-->
+
+<!--a propriedade wrap_content faz com que o botão abrace o
+texto que eu digitar, independente do tamanho
+
+Temos também a propriedade MATCH_parent para fazer o botão se
+estender pela largura (se width) ou altura (se height)
+ do pai (tela azul menor )-->
+
+<!-- android:layout_alignParentBottom="true" serve para
+posicioanr no fundo da tela-->
+
+<!-- todos esses valores TRUE por default são FALSE-->

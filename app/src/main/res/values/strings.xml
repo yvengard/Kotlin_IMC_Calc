@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Calculadora IMC</string>
+    <string name="message_classfiicacao">Classificacao: %1$s</string>
+
+</resources>
+
+    <!--<string name="message">Oi</string>  (isso no strings.xml)-->
+
+    <!--resource string name é o nome do meu aplicativo, vai aparecer na barra roxa superior de menu-->
+    <!--Você pode chamar uma string daqui direto no activity main usando android:texto="@string/message"
+(no activity_main.xml, dentro de <textview>)que ai ela vai puxar esse Oi ai comentado-->
